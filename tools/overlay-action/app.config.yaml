@@ -1,0 +1,18 @@
+application:
+  actions: actions
+  runtimeManifest:
+    packages:
+      overlay:
+        license: Apache-2.0
+        actions:
+          pdp:
+            function: actions/pdp-overlay/index.js
+            web: 'yes'
+            runtime: nodejs:18
+            inputs:
+              LOG_LEVEL: debug
+              STORE_CONFIG_ENV: $STORE_CONFIG_ENV
+              STORE_BASE_PATH: $STORE_BASE_PATH
+            annotations:
+              require-adobe-auth: false
+              final: true
